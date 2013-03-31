@@ -1,0 +1,241 @@
+id,game_id,name,code,created_at
+1,3,Afghanistan,af,NULL
+2,3,Albania,al,NULL
+3,2,Algeria,dz,NULL
+4,3,"American Samoa",as,NULL
+5,3,Andorra,ad,NULL
+6,2,Angola,ao,NULL
+7,3,Anguilla,ai,NULL
+8,3,Antarctica,aq,NULL
+9,3,"Antigua And Barbuda",ag,NULL
+10,3,Argentina,ar,NULL
+11,3,Armenia,am,NULL
+12,3,Aruba,aw,NULL
+13,3,Australia,au,NULL
+14,1,Austria,at,NULL
+15,3,Azerbaijan,az,NULL
+16,3,Bahamas,bs,NULL
+17,3,Bahrain,bh,NULL
+18,3,Bangladesh,bd,NULL
+19,3,Barbados,bb,NULL
+20,1,Belarus,by,NULL
+21,1,Belgium,be,NULL
+22,3,Belize,bz,NULL
+23,2,Benin,bj,NULL
+24,3,Bermuda,bm,NULL
+25,3,Bhutan,bt,NULL
+26,3,Bolivia,bo,NULL
+27,3,"Bosnia And Herzegowina",ba,NULL
+28,2,Botswana,bw,NULL
+29,3,"Bouvet Island",bv,NULL
+30,3,Brazil,br,NULL
+31,3,"British Indian Ocean Territory",io,NULL
+32,3,"Brunei Darussalam",bn,NULL
+33,1,Bulgaria,bg,NULL
+34,2,"Burkina Faso",bf,NULL
+35,2,Burundi,bi,NULL
+36,3,Cambodia,kh,NULL
+37,2,Cameroon,cm,NULL
+38,3,Canada,ca,NULL
+39,2,"Cape Verde",cv,NULL
+40,3,"Cayman Islands",ky,NULL
+41,2,"Central African Republic",cf,NULL
+42,2,Chad,td,NULL
+43,3,Chile,cl,NULL
+44,3,China,cn,NULL
+45,3,"Christmas Island",cx,NULL
+46,3,"Cocos Islands",cc,NULL
+47,3,Colombia,co,NULL
+48,2,Comoros,km,NULL
+49,2,"Rep. of Congo",cg,NULL
+50,2,"Dem. Rep. of Congo",cd,NULL
+51,3,"Cook Islands",ck,NULL
+52,3,"Costa Rica",cr,NULL
+53,2,"Cote D'ivoire",ci,NULL
+54,3,Croatia,hr,NULL
+55,3,Cuba,cu,NULL
+56,1,Cyprus,cy,NULL
+57,1,"Czech Republic",cz,NULL
+58,1,Denmark,dk,NULL
+59,2,Djibouti,dj,NULL
+60,3,Dominica,dm,NULL
+61,3,"Dominican Republic",do,NULL
+62,3,"East Timor",tp,NULL
+63,3,Ecuador,ec,NULL
+64,2,Egypt,eg,NULL
+65,3,"El Salvador",sv,NULL
+66,2,"Equatorial Guinea",gq,NULL
+67,2,Eritrea,er,NULL
+68,1,Estonia,ee,NULL
+69,2,Ethiopia,et,NULL
+70,3,"Falkland Islands",fk,NULL
+71,3,"Faroe Islands",fo,NULL
+72,3,Fiji,fj,NULL
+73,3,Finland,fi,NULL
+75,1,France,fx,NULL
+76,3,"French Guiana",gf,NULL
+77,3,"French Polynesia",pf,NULL
+78,3,"French Southern Territories",tf,NULL
+79,2,Gabon,ga,NULL
+80,2,Gambia,gm,NULL
+81,3,Georgia,ge,NULL
+82,1,Germany,de,NULL
+83,2,Ghana,gh,NULL
+84,3,Gibraltar,gi,NULL
+85,1,Greece,gr,NULL
+86,3,Greenland,gl,NULL
+87,3,Grenada,gd,NULL
+88,3,Guadeloupe,gp,NULL
+89,3,Guam,gu,NULL
+90,3,Guatemala,gt,NULL
+91,2,Guinea,gn,NULL
+92,2,Guinea-Bissau,gw,NULL
+93,3,Guyana,gy,NULL
+94,3,Haiti,ht,NULL
+95,3,"Heard And Mc Donald Islands",hm,NULL
+96,3,"Vatican City State",va,NULL
+97,3,Honduras,hn,NULL
+98,3,"Hong Kong",hk,NULL
+99,3,Hungary,hu,NULL
+100,3,Iceland,is,NULL
+101,3,India,in,NULL
+102,3,Indonesia,id,NULL
+103,3,Iran,ir,NULL
+104,3,Iraq,iq,NULL
+105,1,Ireland,ie,NULL
+106,3,Israel,il,NULL
+107,1,Italy,it,NULL
+108,3,Jamaica,jm,NULL
+109,3,Japan,jp,NULL
+110,3,Jordan,jo,NULL
+111,3,Kazakhstan,kz,NULL
+112,2,Kenya,ke,NULL
+113,3,Kiribati,ki,NULL
+114,3,"Korea, D.P.R.O.",kp,NULL
+115,3,"Korea, Republic Of",kr,NULL
+116,3,Kuwait,kw,NULL
+117,3,Kyrgyzstan,kg,NULL
+118,3,"Laos ",la,NULL
+119,1,Latvia,lv,NULL
+120,3,Lebanon,lb,NULL
+121,2,Lesotho,ls,NULL
+122,2,Liberia,lr,NULL
+123,2,Libya,ly,NULL
+124,1,Liechtenstein,li,NULL
+125,1,Lithuania,lt,NULL
+126,1,Luxembourg,lu,NULL
+127,3,Macau,mo,NULL
+128,1,Macedonia,mk,NULL
+129,2,Madagascar,mg,NULL
+130,2,Malawi,mw,NULL
+131,3,Malaysia,my,NULL
+132,3,Maldives,mv,NULL
+133,2,Mali,ml,NULL
+134,3,Malta,mt,NULL
+135,3,"Marshall Islands",mh,NULL
+136,3,Martinique,mq,NULL
+137,2,Mauritania,mr,NULL
+138,2,Mauritius,mu,NULL
+139,3,Mayotte,yt,NULL
+140,3,Mexico,mx,NULL
+141,3,"Micronesia, Federated States Of",fm,NULL
+142,3,"Moldova, Republic Of",md,NULL
+143,1,Monaco,mc,NULL
+144,3,Mongolia,mn,NULL
+145,1,Montenegro,me,NULL
+146,3,Montserrat,ms,NULL
+147,2,Morocco,ma,NULL
+148,2,Mozambique,mz,NULL
+149,3,Burma,mm,NULL
+150,2,Namibia,na,NULL
+151,3,Nauru,nr,NULL
+152,3,Nepal,np,NULL
+153,3,Netherlands,nl,NULL
+154,3,"Netherlands Antilles",an,NULL
+155,3,"New Caledonia",nc,NULL
+156,3,"New Zealand",nz,NULL
+157,3,Nicaragua,ni,NULL
+158,2,Niger,ne,NULL
+159,2,Nigeria,ng,NULL
+160,3,Niue,nu,NULL
+161,3,"Norfolk Island",nf,NULL
+162,3,"Northern Mariana Islands",mp,NULL
+163,1,Norway,no,NULL
+164,3,Oman,om,NULL
+165,3,Pakistan,pk,NULL
+166,3,Palau,pw,NULL
+167,3,Panama,pa,NULL
+168,3,"Papua New Guinea",pg,NULL
+169,3,Paraguay,py,NULL
+170,3,Peru,pe,NULL
+171,3,Philippines,ph,NULL
+172,3,Pitcairn,pn,NULL
+173,1,Poland,pl,NULL
+174,3,Portugal,pt,NULL
+175,3,"Puerto Rico",pr,NULL
+176,3,Qatar,qa,NULL
+177,3,Reunion,re,NULL
+178,3,Romania,ro,NULL
+179,3,"Russian Federation",ru,NULL
+180,2,Rwanda,rw,NULL
+181,3,"Saint Kitts And Nevis",kn,NULL
+182,3,"Saint Lucia",lc,NULL
+183,3,"Saint Vincent And The Grenadines",vc,NULL
+184,3,Samoa,ws,NULL
+185,3,"San Marino",sm,NULL
+186,2,"Sao Tome & Principe",st,NULL
+187,3,"Saudi Arabia",sa,NULL
+188,2,Senegal,sn,NULL
+189,3,Serbia,rs,NULL
+190,2,Seychelles,sc,NULL
+191,2,"Sierra Leone",sl,NULL
+192,3,Singapore,sg,NULL
+193,3,Slovakia,sk,NULL
+194,3,Slovenia,si,NULL
+195,3,"Solomon Islands",sb,NULL
+196,2,Somalia,so,NULL
+197,2,"South Africa",za,NULL
+198,2,"South Sudan",ss,NULL
+199,3,"South Georgia And South S.S.",gs,NULL
+200,3,Spain,es,NULL
+201,3,"Sri Lanka",lk,NULL
+202,3,"St. Helena",sh,NULL
+203,3,"St. Pierre And Miquelon",pm,NULL
+204,2,Sudan,sd,NULL
+205,3,Suriname,sr,NULL
+206,3,"Svalbard And Jan Mayen Islands",sj,NULL
+207,2,Swaziland,sz,NULL
+208,1,Sweden,se,NULL
+209,1,Switzerland,ch,NULL
+210,3,"Syrian Arab Republic",sy,NULL
+211,3,Taiwan,tw,NULL
+212,3,Tajikistan,tj,NULL
+213,2,Tanzania,tz,NULL
+214,3,Thailand,th,NULL
+215,2,Togo,tg,NULL
+216,3,Tokelau,tk,NULL
+217,3,Tonga,to,NULL
+218,3,"Trinidad And Tobago",tt,NULL
+219,2,Tunisia,tn,NULL
+220,1,Turkey,tr,NULL
+221,3,Turkmenistan,tm,NULL
+222,3,"Turks And Caicos Islands",tc,NULL
+223,3,Tuvalu,tv,NULL
+224,2,Uganda,ug,NULL
+225,3,Ukraine,ua,NULL
+226,3,"United Arab Emirates",ae,NULL
+227,1,"United Kingdom",gb,NULL
+228,3,"United States",us,NULL
+229,3,"U.S. Minor Islands",um,NULL
+230,3,Uruguay,uy,NULL
+231,3,Uzbekistan,uz,NULL
+232,3,Vanuatu,vu,NULL
+233,3,Venezuela,ve,NULL
+234,3,"Viet Nam",vn,NULL
+235,3,"British Virgin Islands",vg,NULL
+236,3,"U.S. Virgin Islands",vi,NULL
+237,3,"Wallis And Futuna Islands",wf,NULL
+238,2,"Western Sahara",eh,NULL
+239,3,Yemen,ye,NULL
+240,2,Zambia,zm,NULL
+241,2,Zimbabwe,zw,NULL
