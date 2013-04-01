@@ -23,7 +23,6 @@ class Quiz extends CI_Controller {
 	
 	public function africa()
 	{
-		
 		$data = $this->prepare_quiz('africa');
 				
 		echo json_encode($data);

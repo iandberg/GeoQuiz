@@ -140,8 +140,8 @@
 					
 					$('#start_quiz_form').attr('action', 'quiz/africa');// prepares 'start quiz' form with proper action
 					
-					$('#start_quiz_form').show();
-					$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
+// 					$('#start_quiz_form').show();
+// 					$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
 					
 				}
 				
@@ -151,12 +151,10 @@
 
 					map_wrap.animate({top: -100, left: -1550}, ani_time, zoom_ease);
 					
-					$('#start_quiz_form').attr('action', 'quiz/europe');// prepares 'start quiz' form with proper action
-					
+					$('#start_quiz_form').attr('action', 'quiz/europe');// prepares 'start quiz' form with proper action		
+				}
 					$('#start_quiz_form').show();
 					$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
-					
-				}
 			});
 			
 // 			Start Quiz actions-------------------------------
