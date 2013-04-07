@@ -198,7 +198,7 @@
 					$('#start_over_quiz_form').show();
 					$('#start_over_quiz_form').animate({opacity: 100, height: 50},1000);
 				
-					$('img.mapster_el').attr({src: "../../assets/img/world_map_for_quiz.gif"});
+					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
 					
 				}, 'json');
 
@@ -221,7 +221,7 @@
 				
 				question_count = current_num + " out of " + document.num_questions + " questions";
 
-				var path_to_flag = "../../assets/img/flags/" + document.quiz[0]['code'] + ".png";
+				var path_to_flag = "<?= asset_url() ?>/img/flags/" + document.quiz[0]['code'] + ".png";
 				
 				$('#flag_area').attr('src', path_to_flag);
 // 				var image_height = $('#flag_area').height();
@@ -233,7 +233,7 @@
 
 				
 // 				$('#flag_area').css({
-// 					'background-image': "url('../../assets/img/flags/" + document.quiz[0]['code'] + ".png')",
+// 					'background-image': "url('../../<?= asset_url() ?>/img/flags/" + document.quiz[0]['code'] + ".png')",
 // 					'background-repeat': 'no-repeat',
 // 					'background-size': 'contain'
 // 					'width': '140',

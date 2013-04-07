@@ -10,7 +10,7 @@ require('templates/header.php');
 				<h2 class='heading'>
 					Test Your Geographical Knowledge! 
 				</h2>
-				<img class='left' src='../../assets/img/hand.png'>
+				<img class='left' src='<?= asset_url() ?>/img/hand.png'>
 				<p id='invite' class='left'>
 					Take a quiz identifying the countries of the world.<br /> 
 					Register and keep track of your progress! 
@@ -19,7 +19,7 @@ require('templates/header.php');
 					echo "<a href='" . base_url('quiz') . "' class='link-button blue'>Start a Quiz!</a>";
 ?>
 			</div>
-			<img class='center' src='../../assets/img/world_splash.png' alt='world_splash.png'> 
+			<img class='center' src='<?= asset_url() ?>/img/world_splash.png' alt='world_splash.png'> 
 <!-- 			corner pieces -->
 			<div class="c-1">
 			</div>

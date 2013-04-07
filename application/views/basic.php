@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>MY Title</title>
-	<link href='../../assets/css/quiz.css' rel='stylesheet' />
+	<link href='<?= asset_url() ?>/css/quiz.css' rel='stylesheet' />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="../../assets/js/jquery.imagemapster.min.js">
+	<script src="<?= asset_url() ?>/js/jquery.imagemapster.min.js">
 	</script>
 
 
@@ -83,7 +83,7 @@
 	<div id='login_greeting'>Welcome Ian</div>
 		<div class='world_map_wrap' style="width: 600px; height: 500px;">
 			<div class='world_map_div' style="width: 1942; height: 985; top: -220px; left: -700px; ">
-				<img id="test" src="../../assets/img/world_map.gif" usemap="#world_map_img_map" style="width: 1942; height: 985;"> 
+				<img id="test" src="<?= asset_url() ?>/img/world_map.gif" usemap="#world_map_img_map" style="width: 1942; height: 985;"> 
 			</div>
 		</div>
 		<div id='quiz_area'>

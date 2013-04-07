@@ -98,9 +98,8 @@ class Quiz extends CI_Controller {
 	}
 	
 	public function study_guide()
-	{
+	{	
 		$this->view_data['study_guide'] = TRUE;
-				
 		$this->load->view('study_guide', $this->view_data);
 	}
 	

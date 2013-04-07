@@ -3,13 +3,13 @@
 	<head>
 		<title>GeoQuiz</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="../../assets/js/jquery.imagemapster.min.js"></script>
-	<script src="../../assets/js/jquery.easing.1.3.js"></script>
+	<script src="<?= asset_url() ?>js/jquery.imagemapster.min.js"></script>
+	<script src="<?= asset_url() ?>js/jquery.easing.1.3.js"></script>
 
-	<link rel="stylesheet" href="../../assets/css/style.css">
-	<link rel="stylesheet" media="screen" href="../../assets/css/geoquiz_style.css" /> 
+	<link rel="stylesheet" href="<?= asset_url() ?>css/style.css">
+	<link rel="stylesheet" media="screen" href="<?= asset_url() ?>/css/geoquiz_style.css" /> 
 
-	<script type="text/javascript" src="../../assets/js/cssrefresh.js"></script>
+	<script type="text/javascript" src="<?= asset_url() ?>/js/cssrefresh.js"></script>
 
 <?php
 	if(isset($quiz) && $quiz) require('script.php');
@@ -23,7 +23,7 @@
 
 		<div class="wrapper cf">
 			<div id="logo">
-				<a href="index.html" ><img src="../../assets/img/logo.png" alt="" /></a>
+				<a href="index.html" ><img src="<?= asset_url() ?>/img/logo.png" alt="" /></a>
 			</div>
 		</div><!--  ENDS header wrapper  -->
 

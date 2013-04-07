@@ -6,7 +6,8 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-
+		$this->load->helper('form');
+		
 		if (isset($this->session->userdata['score'])) // if coming from the quiz, when saving score while logged out
 		{
 			switch ($this->process_login())

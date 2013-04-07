@@ -6,10 +6,6 @@ $autoload['libraries'] = array('database', 'session');
 
 $autoload['helper'] = array('url', 'form');
 
+$autoload['config'] = array('asset');
 
-$autoload['config'] = array();
-
-
-$autoload['language'] = array();
-
-$autoload['model'] = array();
+$autoload['helper'] = array('asset');

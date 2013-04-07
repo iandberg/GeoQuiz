@@ -167,7 +167,7 @@
 			
 				code = $(this).attr('href');
 				
-				var path_to_flag = "../../assets/img/flags/" + code + ".png";
+				var path_to_flag = "<?= asset_url() ?>/img/flags/" + code + ".png";
 				
 				$('#question').html("<h3>" + document.country_codes[code] + "</h3>");
 
@@ -178,7 +178,7 @@
 				
 				$('#question').html("");
 
-				$('#flag_area').attr('src', "../../assets/img/blank.png");
+				$('#flag_area').attr('src', "<?= asset_url() ?>/img/blank.png");
 			});
 
 			

@@ -9,7 +9,7 @@ require('templates/header.php');
 			<div class="entry-content cf">
 				<div class='world_map_wrap' style='width: 500px; height: 500px;'>
 					<div class='world_map_div' style='width: 3500px; height: 1775px; left: 0px; top: 100px; '>
-						<img id='world_map' src='../../assets/img/world_map.gif' usemap='#world_map_img_map' style='width: 3500px; height: 1775px;'> 
+						<img id='world_map' src='<?= asset_url() ?>/img/world_map.gif' usemap='#world_map_img_map' style='width: 3500px; height: 1775px;'> 
 					</div>
 				</div>
 				
