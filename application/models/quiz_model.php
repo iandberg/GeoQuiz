@@ -6,7 +6,7 @@ class Quiz_model extends CI_Model
 
 	public function get_quiz($game)
 	{
-			$query = "SELECT countries.name, countries.code, countries.game_id FROM countries 
+			$query = "SELECT countries.name, countries.code, countries.game_id, countries.width FROM countries 
 					JOIN games ON countries.game_id = games.id 
 					WHERE games.game_name = '" . $game . "' ";
 					
@@ -25,7 +25,7 @@ class Quiz_model extends CI_Model
 
 	public function get_country_array()
 	{
-		$query = "SELECT code, name from countries ";
+		$query = "SELECT code, name, width from countries";
 
 		$sql = $this->db->query($query);
 		

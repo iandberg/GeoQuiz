@@ -8,12 +8,12 @@
 		$.post('get_country_array',function(data){
 		
 			document.country_codes = data;
-			
+						
 		},'json');
 
 			
-// 			turn off for production		
-// 			$('#start_quiz_form').fadeIn();
+
+
 
 			var world_map = $('#world_map');
 			var map_wrap = $('.world_map_div');
@@ -140,8 +140,8 @@
 				
 				if ($(this).val() == 'africa') {
 					
-					document.game_name = 'africa';
-					
+					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
+
 					world_map.mapster('resize', 1942, 0, zoom_time);
 
 					map_wrap.animate({top: -230, left: -750}, ani_time, zoom_ease);					
@@ -164,21 +164,32 @@
 		
 
 			$('area').mouseover(function(){
-			
+
 				code = $(this).attr('href');
 				
-				var path_to_flag = "<?= asset_url() ?>/img/flags/" + code + ".png";
-				
-				$('#question').html("<h3>" + document.country_codes[code] + "</h3>");
+				var flag_class = "flags-" + code + " center";
 
-				$('#flag_area').attr('src', path_to_flag);
+				$('#question').html("<h3>" + document.country_codes[code][0] + "</h3>");
+
+				$('#flag_area').addClass(flag_class);
+
+				$('#flag_area').css({
+					"height": "123",
+					"width": document.country_codes[code][1]
+				});
+				
 			});
 
 			$('area').mouseout(function(){
 				
 				$('#question').html("");
 
-				$('#flag_area').attr('src', "<?= asset_url() ?>/img/blank.png");
+				$('#flag_area').removeClass();
+
+				$('#flag_area').css({
+					"height": "0",
+					"width": "0"
+				});
 			});
 
 			

@@ -10,7 +10,7 @@ require('templates/header.php');
 				<h2 class='heading'>
 					Test Your Geographical Knowledge! 
 				</h2>
-				<img class='left' src='<?= asset_url() ?>/img/hand.png'>
+				<div class='left sprite-hand'></div>
 				<p id='invite' class='left'>
 					Take a quiz identifying the countries of the world.<br /> 
 					Register and keep track of your progress! 

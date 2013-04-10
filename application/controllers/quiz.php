@@ -24,7 +24,7 @@ class Quiz extends CI_Controller {
 	public function africa()
 	{
 		$data = $this->prepare_quiz('africa');
-				
+		
 		echo json_encode($data);
 	}
 
@@ -47,6 +47,7 @@ class Quiz extends CI_Controller {
 			$data[$j]['name'] = $row->name;
 			$data[$j]['code'] = $row->code;
 			$data[$j]['game_id'] = $row->game_id;
+			$data[$j]['flag_width'] = $row->width;
 			$j++;
 		}
 		
@@ -112,7 +113,7 @@ class Quiz extends CI_Controller {
 		$data = array();
 		foreach($countries as $row)
 		{
-			$data[$row->code] = $row->name;
+			$data[$row->code] = array($row->name, $row->width);
 		}
 		
 		echo json_encode($data);

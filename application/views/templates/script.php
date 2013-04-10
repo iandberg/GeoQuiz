@@ -93,37 +93,38 @@
 			world_map.mapster('resize', 494, 0, zoom_time);
 				
 
-			$(document).keypress(function(e){
+				$(document).keydown(function(e){
 
-				 if (e.keyCode === 106) 
-				 {
-				 	map_wrap.animate({
-				 		left: '+=' + move_unit
-					}, ani_time, move_ease);
-				 }
-				 
-				 if (e.keyCode === 108) 
-				 {
-				 	map_wrap.animate({
-						left: '-=' + move_unit
-					}, ani_time, move_ease);
-				 }
-				 
-				 if (e.keyCode === 105) 
-				 {
-				 	map_wrap.animate({
-						top: '+=' + move_unit
-					}, ani_time, move_ease);
-				 }
-				 
-				 if (e.keyCode === 107) 
-				 {
-				 	map_wrap.animate({
-						top: '-=' + move_unit
-					}, ani_time, move_ease);
-				 }
-			})
-			
+						 if (e.keyCode === 37)//right 
+						 {
+							map_wrap.animate({
+								left: '+=' + move_unit
+							}, ani_time, move_ease);
+						 }
+			 
+						 if (e.keyCode === 39) 
+						 {
+							map_wrap.animate({
+								left: '-=' + move_unit
+							}, ani_time, move_ease);
+						 }
+			 
+						 if (e.keyCode === 38) 
+						 {
+						 e.preventDefault();
+							map_wrap.animate({
+								top: '+=' + move_unit
+							}, ani_time, move_ease);
+						 }
+			 
+						 if (e.keyCode === 40) 
+						 {
+						 e.preventDefault();
+							map_wrap.animate({
+								top: '-=' + move_unit
+							}, ani_time, move_ease);
+						 }
+					})			
 			
 // 			Select a continent menu
 			$('select#quiz_select').change(function(){
@@ -220,13 +221,18 @@
 				current_num = (document.num_questions + 1) - document.quiz.length;
 				
 				question_count = current_num + " out of " + document.num_questions + " questions";
-
-				var path_to_flag = "<?= asset_url() ?>/img/flags/" + document.quiz[0]['code'] + ".png";
 				
-				$('#flag_area').attr('src', path_to_flag);
-// 				var image_height = $('#flag_area').height();
-// 				var image_width = $('#flag_area').width();
-// 				alert (image_height + " " + image_width);
+				var flag_class = "flags-" + document.quiz[0]['code'] + " center";
+
+				$('#flag_area').addClass(flag_class);
+
+				$('#flag_area').css({
+					"height": "123",
+					"width": document.quiz[0]['flag_width']
+				});
+				
+						
+
 				$('#flag_area').animate({opacity: 100});
 				
 // 				$('#flag_division').animate({height: image_height, width: image_width},1000);

@@ -7,9 +7,9 @@
 	<script src="<?= asset_url() ?>js/jquery.easing.1.3.js"></script>
 
 	<link rel="stylesheet" href="<?= asset_url() ?>css/style.css">
-	<link rel="stylesheet" media="screen" href="<?= asset_url() ?>/css/geoquiz_style.css" /> 
+	<link rel="stylesheet" media="screen" href="<?= asset_url() ?>css/geoquiz_style.css" /> 
 
-	<script type="text/javascript" src="<?= asset_url() ?>/js/cssrefresh.js"></script>
+	<script type="text/javascript" src="<?= asset_url() ?>js/cssrefresh.js"></script>
 
 <?php
 	if(isset($quiz) && $quiz) require('script.php');
@@ -23,7 +23,7 @@
 
 		<div class="wrapper cf">
 			<div id="logo">
-				<a href="index.html" ><img src="<?= asset_url() ?>/img/logo.png" alt="" /></a>
+				<div class='sprite-logo'></div>
 			</div>
 		</div><!--  ENDS header wrapper  -->
 

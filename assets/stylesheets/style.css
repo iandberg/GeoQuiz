@@ -1,0 +1,42 @@
+/* line 90, sprite/*.png */
+.sprite-sprite, .sprite-corner-1, .sprite-corner-2, .sprite-corner-3, .sprite-corner-4, .sprite-current, .sprite-hand, .sprite-logo {
+  background: url('../img/sprite-s79b5a142cb.png') no-repeat;
+}
+
+
+.sprite-corner-1 {
+  background-position: 0 -224px;
+}
+
+
+.sprite-corner-2 {
+  background-position: 0 -174px;
+}
+
+
+.sprite-corner-3 {
+  background-position: 0 -124px;
+}
+
+
+.sprite-corner-4 {
+  background-position: 0 -274px;
+}
+
+
+.sprite-current {
+  background-position:  0 -324px;
+}
+
+
+.sprite-hand {
+  background-position: 0 0;
+  background: url('../img/sprite-s79b5a142cb.png') no-repeat;
+}
+
+
+.sprite-logo {
+	height: px;
+	width: px;
+  background: url('../img/sprite-s79b5a142cb.png') no-repeat 0 -74px;
+}
