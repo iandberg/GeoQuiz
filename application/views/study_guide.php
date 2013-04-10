@@ -64,7 +64,7 @@ require('templates/header.php');
 					</form>
 				</div>
 			</div>
-			<div id='array_dump'></div>
+			<div class='flags-ci'></div>
 <!-- Image Map -->
 <?php
 require('templates/image_map.php');

@@ -211,7 +211,9 @@
 
 
 			function print_question() {
-			
+				
+				$('#flag_area').removeClass();
+				
 				if (document.quiz.length < 1)
 				{
 					quiz_over();
