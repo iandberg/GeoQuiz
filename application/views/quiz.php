@@ -19,6 +19,7 @@ require('templates/header.php');
 				if (isset($session['username'])) echo "<div id='welcome'>Welcome <strong>" . $session['username'] . "</strong></div>";
 				if ($this->session->flashdata('game_save') == 1) echo "<div id='game_save_message'>Score saved!</div>";
 ?>		
+				<p>Use arrow keys to move map around</p>
 				<form id='quiz_select_form' method='post' action='#'>
 				<label id='quiz_select' for='quiz_select'>Select a continent</label>
 					<select id='quiz_select'>

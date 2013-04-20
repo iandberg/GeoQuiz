@@ -4,11 +4,6 @@
 		$(document).ready(function(){
 
 
-
-
-// 			turn off for production		
-// 			$('#start_quiz_form').fadeIn();
-
 			var world_map = $('#world_map');
 			var map_wrap = $('.world_map_div');
 			var ani_time = 500;
@@ -52,35 +47,23 @@
 					key: "dj_arrow",
 					includeKeys: "dj, dj_inner_mask, dj_outer"
 				},{
-					key: "ad_inner_mask",
-					isMask: true
-				},{
 					key: "ad_arrow",
-					includeKeys: "ad, ad_inner_mask, ad_outer"
+					includeKeys: "ad"
 				},{
-					key: "mt_inner_mask",
-					isMask: true
+					key: "sm_arrow",
+					includeKeys: "sm"
+				},{
+					key: "va_arrow",
+					includeKeys: "va"
 				},{
 					key: "mt_arrow",
-					includeKeys: "mt, mt_inner_mask, mt_outer"
+					includeKeys: "mt"
 				},{
-					key: "va_inner_mask",
-					isMask: true
+					key: "li_arrow",
+					includeKeys: "li"
 				},{
-					key: "va_outer",
-					includeKeys: "va, va_inner_mask"
-				},{
-					key: "li_inner_mask",
-					isMask: true
-				},{
-					key: "li_outer",
-					includeKeys: "li, li_inner_mask"
-				},{
-					key: "mc_inner_mask",
-					isMask: true
-				},{
-					key: "mc",
-					includeKeys: "mc_outer, mc_inner_mask"
+					key: "mc_arrow",
+					includeKeys: "mc"
 				},{
 					key: "gq_inner_mask",
 					isMask: true
@@ -236,18 +219,7 @@
 						
 
 				$('#flag_area').animate({opacity: 100});
-				
-// 				$('#flag_division').animate({height: image_height, width: image_width},1000);
-
-				
-// 				$('#flag_area').css({
-// 					'background-image': "url('../../<?= asset_url() ?>/img/flags/" + document.quiz[0]['code'] + ".png')",
-// 					'background-repeat': 'no-repeat',
-// 					'background-size': 'contain'
-// 					'width': '140',
-// 					'height': '92'
-// 					});
-				
+								
 				$('#question_count').html(question_count);
 				$('#response_message').html("");// clear out previous response
 				$('#question').html("Where is <h3>" + document.quiz[0]['name'] + "?</h3>");

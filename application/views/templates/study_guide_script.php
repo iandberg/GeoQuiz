@@ -58,35 +58,23 @@
 					key: "dj_arrow",
 					includeKeys: "dj, dj_inner_mask, dj_outer"
 				},{
-					key: "ad_inner_mask",
-					isMask: true
-				},{
 					key: "ad_arrow",
-					includeKeys: "ad, ad_inner_mask, ad_outer"
+					includeKeys: "ad"
 				},{
-					key: "mt_inner_mask",
-					isMask: true
+					key: "sm_arrow",
+					includeKeys: "sm"
+				},{
+					key: "va_arrow",
+					includeKeys: "va"
 				},{
 					key: "mt_arrow",
-					includeKeys: "mt, mt_inner_mask, mt_outer"
+					includeKeys: "mt"
 				},{
-					key: "va_inner_mask",
-					isMask: true
+					key: "li_arrow",
+					includeKeys: "li"
 				},{
-					key: "va_outer",
-					includeKeys: "va, va_inner_mask"
-				},{
-					key: "li_inner_mask",
-					isMask: true
-				},{
-					key: "li_outer",
-					includeKeys: "li, li_inner_mask"
-				},{
-					key: "mc_inner_mask",
-					isMask: true
-				},{
-					key: "mc",
-					includeKeys: "mc_outer, mc_inner_mask"
+					key: "mc_arrow",
+					includeKeys: "mc"
 				},{
 					key: "gq_inner_mask",
 					isMask: true
