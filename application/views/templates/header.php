@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>GeoQuiz</title>
-<!-- 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-	<script src="<?= asset_url() ?>js/jquery-1.9.1.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- 	<script src="<?= asset_url() ?>js/jquery-1.9.1.min.js"></script> -->
 	<script src="<?= asset_url() ?>js/jquery.imagemapster.min.js"></script>
 	<script src="<?= asset_url() ?>js/jquery.easing.1.3.js"></script>
 

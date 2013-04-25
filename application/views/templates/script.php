@@ -244,17 +244,20 @@
 					document.score = Math.floor((document.correct_answers * 100) / document.num_questions);
 					$('#response_message').html("Correct!");
 					$('#correct_questions').html("score: " + document.score + "<p id='percent'>%</p>");
-// 					$('#correct_questions').after("<p id='percent'>&#37;</p>");
 					document.quiz.shift();// remove top question from array
-					guess = 1;
-					setTimeout(function(){print_question()}, 2000);
+					guess = 1; // reset guesses
+					setTimeout(function(){print_question()}, 2000); // wait a couple seconds before showing next question
 				}
 				else if (guess == 3)
 				{
+					
 					$('#response_message').html("No more tries! moving on...");
 					document.quiz.shift();// remove top question from array
 					guess = 1;
+
 					setTimeout(function(){print_question()}, 2000);
+					
+
 				}
 				else
 				{
@@ -292,7 +295,7 @@
 
 				$('#question').html("");//  clear out question field
 				$('#question_count').html("");//  clear out question_count field
-				$('#correct_questions').html("Final score: " + document.score);// print final score
+				$('#correct_questions').html("Final score: " + document.score + "<p id='percent'>%</p>");// print final score
 				
 				$('#question_box').animate({opacity: 0, height: 0},1000);
 				$('#question_box').hide();

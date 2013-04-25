@@ -224,7 +224,7 @@ form#start_quiz_form {
 }
 
 #percent {
-
+	font-family: Arial;
 	float: right;
 	font-size: 25px;
 }
