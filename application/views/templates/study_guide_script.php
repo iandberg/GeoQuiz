@@ -137,10 +137,37 @@
 				
 				if ($(this).val() == 'europe') {
 				
+					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
+
 					world_map.mapster('resize', 3500, 0, zoom_time);
 
 					map_wrap.animate({top: -100, left: -1550}, ani_time, zoom_ease);
 				}
+
+				if ($(this).val() == 'south_america') {
+
+					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
+
+					world_map.mapster('resize', 2300, 0, zoom_time);
+
+					map_wrap.animate({top: -480, left: -450}, ani_time, zoom_ease);
+					
+					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/south_america');// prepares 'start quiz' form with proper action		
+				}
+
+				if ($(this).val() == 'southeast_asia') {
+
+					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
+
+					world_map.mapster('resize', 2400, 0, zoom_time);
+
+					map_wrap.animate({top: -300, left: -1600}, ani_time, zoom_ease);
+					
+					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/southeast_asia');// prepares 'start quiz' form with proper action		
+				}
+
+				$('#start_quiz_form').show();
+				$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
 			});
 			
 

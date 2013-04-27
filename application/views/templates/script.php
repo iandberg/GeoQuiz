@@ -110,6 +110,7 @@
 					})			
 			
 // 			Select a continent menu
+
 			$('select#quiz_select').change(function(){
 				
 				$('#game_save_message').hide();
@@ -122,23 +123,45 @@
 
 					map_wrap.animate({top: -230, left: -750}, ani_time, zoom_ease);
 					
-					$('#start_quiz_form').attr('action', 'quiz/africa');// prepares 'start quiz' form with proper action
-					
-// 					$('#start_quiz_form').show();
-// 					$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
-					
+					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/africa');// prepares 'start quiz' form with proper action				
 				}
 				
 				if ($(this).val() == 'europe') {
 				
+					document.game_name = 'europe';
+
 					world_map.mapster('resize', 3500, 0, zoom_time);
 
 					map_wrap.animate({top: -100, left: -1550}, ani_time, zoom_ease);
 					
-					$('#start_quiz_form').attr('action', 'quiz/europe');// prepares 'start quiz' form with proper action		
+					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/europe');// prepares 'start quiz' form with proper action		
 				}
-					$('#start_quiz_form').show();
-					$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
+				
+				if ($(this).val() == 'south_america') {
+				
+					document.game_name = 'south_america';
+
+					world_map.mapster('resize', 2300, 0, zoom_time);
+
+					map_wrap.animate({top: -480, left: -450}, ani_time, zoom_ease);
+					
+					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/south_america');// prepares 'start quiz' form with proper action		
+				}
+
+				if ($(this).val() == 'southeast_asia') {
+
+					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
+
+					world_map.mapster('resize', 2400, 0, zoom_time);
+
+					map_wrap.animate({top: -300, left: -1600}, ani_time, zoom_ease);
+					
+					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/southeast_asia');// prepares 'start quiz' form with proper action		
+				}
+
+				$('#start_quiz_form').show();
+				$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
+
 			});
 			
 // 			Start Quiz actions-------------------------------
@@ -148,7 +171,6 @@
 			form.submit(function(){
 
 				$.post(form.attr('action'), form.serialize(), function(data){
-// 				console.log(data);
 					document.quiz = data;
 					document.num_questions = data.length;
 					document.correct_answers = 0;
@@ -214,9 +236,7 @@
 				$('#flag_area').css({
 					"height": "123",
 					"width": document.quiz[0]['flag_width']
-				});
-				
-						
+				});	
 
 				$('#flag_area').animate({opacity: 100});
 								

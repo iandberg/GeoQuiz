@@ -19,27 +19,13 @@ class Quiz extends CI_Controller {
 		
 		$this->load->view('quiz', $this->view_data);
 	}
-	
-	
-	public function africa()
-	{
-		$data = $this->prepare_quiz('africa');
-		
-		echo json_encode($data);
-	}
 
-	public function europe()
-	{		
-		$data = $this->prepare_quiz('europe');
-		
-		echo json_encode($data);
-	}
 	
-	
-	private function prepare_quiz($continent)
+
+	public function prepare_quiz($continent)
 	{
 		$this->load->model('quiz_model');
-		$data_object = $this->quiz_model->get_quiz($continent);
+		$data_object = $this->quiz_model->get_quiz(str_replace('_', ' ', $continent));
 		
 		$j = 0;
 		foreach ($data_object as $row)
@@ -53,7 +39,7 @@ class Quiz extends CI_Controller {
 		
 		shuffle($data);// randomize the questions
 
-		return $data;
+		echo json_encode($data);
 	
 	}
 	

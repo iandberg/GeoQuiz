@@ -9,7 +9,7 @@ require('templates/header.php');
 			<div class="entry-content cf">
 				<div class='world_map_wrap' style='width: 500px; height: 500px;'>
 					<div class='world_map_div' style='width: 3500px; height: 1775px; left: 0px; top: 100px; '>
-						<img id='world_map' src='<?= asset_url() ?>/img/world_map_for_quiz.gif' usemap='#world_map_img_map' style='width: 3500px; height: 1775px;'> 
+						<img id='world_map' src='<?= asset_url() ?>/img/world_map.gif' usemap='#world_map_img_map' style='width: 3500px; height: 1775px;'> 
 					</div>
 				</div>
 				
@@ -25,14 +25,13 @@ require('templates/header.php');
 						<option value='none'>--none--</option>
 						<option value='africa'>Africa</option>
 						<option value='europe'>Europe</option>
+						<option value='south_america'>South America</option>
+						<option value='southeast_asia'>Southeast Asia</option>
 					</select>
 				</form>
 				
 				<p>Mouse over country to see name and flag</p>
 				<p>Use arrow keys to move map around</p>
-				<form id='start_quiz_form' class='left contactForm' action='none' method='post'>
-				<input id='submit' type='submit' value='Start Quiz!' name='submit' />
-				</form>
 				
 				
 				<div id='question_box' style='height: 50px;'>

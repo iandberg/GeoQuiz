@@ -26,6 +26,8 @@ require('templates/header.php');
 						<option value='none'>No Quiz Selected</option>
 						<option value='africa'>Africa</option>
 						<option value='europe'>Europe</option>
+						<option value='south_america'>South America</option>
+						<option value='southeast_asia'>Southeast Asia</option>
 					</select>
 				</form>
 				
