@@ -1,32 +1,35 @@
 	<script>
 
 		//Script reference!
-		$(document).ready(function(){
+		window.onload = function(){
 
-
+		var country_codes;
 
 		$.post('get_country_array',function(data){
 		
-			document.country_codes = data;
+			country_codes = data;
 						
 		},'json');
 
+
+			var world_map$ = $('#world_map'),
+			map_wrap$ = $('.world_map_div'),
+			question_box$ = $('#question_box'),
+			flag_division$ = $('#flag_division'),
+			quiz_select$ = $('select#quiz_select'),
+			game_save_message$ = $('#game_save_message'),
+
 			
-
-
-
-			var world_map = $('#world_map');
-			var map_wrap = $('.world_map_div');
-			var ani_time = 500;
-			var move_unit = 100;
-			var move_ease = 'easeOutQuart';
-			var zoom_ease = 'easeOutQuart';
-			var zoom_unit = 600;
-			var zoom_time = 200;
+			ani_time = 500,
+			move_unit = 100,
+			move_ease = 'easeOutQuart',
+			zoom_ease = 'easeOutQuart',
+			zoom_unit = 600,
+			zoom_time = 200;
 			
 // 			initialize map zoom out
 
-			world_map.mapster({
+			world_map$.mapster({
 				staticState: false,
 				mapKey: 'country',
 				fillColor: '000000',
@@ -84,98 +87,93 @@
 				}]
 			});
 
-			world_map.mapster('resize', 494, 0, zoom_time);
+			world_map$.mapster('resize', 494, 0, zoom_time);
+			
+			var mapster_element$ = $('img.mapster_el');
 				
+			var map_adjust = { // coordinates for map positioning and zooming
+			
+				africa: {
+					resize: 1942,
+					top: -230,
+					left: -750,
+					},
+					
+				europe: {
+					resize: 3500,
+					top: -100,
+					left: -1550,
+				},
+				
+				south_america: {
+					resize: 2300,
+					top: -480,
+					left: -450,				
+				},
+				
+				southeast_asia: {
+					resize: 2400,
+					top: -300,
+					left: -1600,
+				}
+			};
+			
+			
+			question_box$.show();
+			question_box$.css({'opacity': 100, 'height': 80},1000);	
+			
+			flag_division$.show();
 
 			$(document).keydown(function(e){
 
-				 if (e.keyCode === 37)//right 
+				 if (e.keyCode === 37) //left 
 				 {
-				 	map_wrap.animate({
+				 	map_wrap$.animate({
 				 		left: '+=' + move_unit
 					}, ani_time, move_ease);
 				 }
 				 
 				 if (e.keyCode === 39) 
 				 {
-				 	map_wrap.animate({
+				 	map_wrap$.animate({ //right
 						left: '-=' + move_unit
 					}, ani_time, move_ease);
 				 }
 				 
 				 if (e.keyCode === 38) 
 				 {
-				 e.preventDefault();
-				 	map_wrap.animate({
+				 e.preventDefault(); // prevent scroll action
+				 	map_wrap$.animate({ //up
 						top: '+=' + move_unit
 					}, ani_time, move_ease);
 				 }
 				 
 				 if (e.keyCode === 40) 
 				 {
-				 e.preventDefault();
-				 	map_wrap.animate({
+				 e.preventDefault(); // prevent scroll action
+				 	map_wrap$.animate({ // down
 						top: '-=' + move_unit
 					}, ani_time, move_ease);
 				 }
 			})
 			
 			
-// 			Select a continent menu
-			$('select#quiz_select').change(function(){
+// 			Select a continent from dropdown menu
+
+			quiz_select$.change(function(){
 				
-				$('#game_save_message').hide();
+				game_save_message$.hide();
 				
-				if ($(this).val() == 'africa') {
-					
-					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
-
-					world_map.mapster('resize', 1942, 0, zoom_time);
-
-					map_wrap.animate({top: -230, left: -750}, ani_time, zoom_ease);					
-				}
+				var continent_choice = $(this).val();
 				
-				if ($(this).val() == 'europe') {
-				
-					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
+				mapster_element$.attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
 
-					world_map.mapster('resize', 3500, 0, zoom_time);
+				world_map$.mapster('resize', map_adjust[continent_choice].resize, 0, zoom_time);
 
-					map_wrap.animate({top: -100, left: -1550}, ani_time, zoom_ease);
-				}
+				map_wrap$.animate({top: map_adjust[continent_choice].top, left: map_adjust[continent_choice].left}, ani_time, zoom_ease);					
 
-				if ($(this).val() == 'south_america') {
-
-					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
-
-					world_map.mapster('resize', 2300, 0, zoom_time);
-
-					map_wrap.animate({top: -480, left: -450}, ani_time, zoom_ease);
-					
-					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/south_america');// prepares 'start quiz' form with proper action		
-				}
-
-				if ($(this).val() == 'southeast_asia') {
-
-					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
-
-					world_map.mapster('resize', 2400, 0, zoom_time);
-
-					map_wrap.animate({top: -300, left: -1600}, ani_time, zoom_ease);
-					
-					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/southeast_asia');// prepares 'start quiz' form with proper action		
-				}
-
-				$('#start_quiz_form').show();
-				$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
-			});
+			});	
 			
-
-			$('#question_box').show();
-			$('#question_box').css({'opacity': 100, 'height': 80},1000);			
-
-			$('#flag_division').show();
-			$('#flag_division').animate({opacity: 100, height: 123},1000);
 		
 
 			$('area').mouseover(function(){
@@ -184,13 +182,13 @@
 				
 				var flag_class = "flags-" + code + " center";
 
-				$('#question').html("<h3>" + document.country_codes[code][0] + "</h3>");
+				$('#question').html("<h3>" + country_codes[code][0] + "</h3>");
 
 				$('#flag_area').addClass(flag_class);
 
 				$('#flag_area').css({
 					"height": "123",
-					"width": document.country_codes[code][1]
+					"width": country_codes[code][1]
 				});
 				
 			});
@@ -208,6 +206,6 @@
 			});
 
 			
-		}); // end of document ready
+		}; // end of window onload
 
  	</script>

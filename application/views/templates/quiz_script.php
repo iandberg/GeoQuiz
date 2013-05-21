@@ -15,14 +15,24 @@
 				correct_answers: 0,
 			};
 
-			var world_map$ = $('#world_map');
-			var map_wrap$ = $('.world_map_div');
-			var ani_time = 500;
-			var move_unit = 100;
-			var move_ease = 'easeOutQuart';
-			var zoom_ease = 'easeOutQuart';
-			var zoom_unit = 600;
-			var zoom_time = 200;
+			var world_map$ = $('#world_map'),
+			map_wrap$ = $('.world_map_div'),
+			start_quiz_form$ = $('#start_quiz_form'),
+			quiz_select_form$ = $('#quiz_select_form'),
+			question_box$ = $('#question_box'),
+			flag_division$ = $('#flag_division'),				
+			correct_questions$ = $('#correct_questions'),
+			score_stats$ = $('#score_stats'),		
+			stop_quiz_form$ = $('#stop_quiz_form'),
+			start_over_quiz_form$ = $('#start_over_quiz_form'),
+
+			// moving the map with arrow keys
+			ani_time = 500,
+			move_unit = 100,
+			move_ease = 'easeOutQuart',
+			zoom_ease = 'easeOutQuart',
+			zoom_time = 200;
+			
 			
 // 			initialize map zoom out
 
@@ -86,104 +96,96 @@
 
 			world_map$.mapster('resize', 494, 0, zoom_time);
 				
-
+				// arrow key events when moving map around
 				$(document).keydown(function(e){
 
-						 if (e.keyCode === 37)//right 
-						 {
-							map_wrap$.animate({
-								left: '+=' + move_unit
-							}, ani_time, move_ease);
-						 }
-			 
-						 if (e.keyCode === 39) 
-						 {
-							map_wrap$.animate({
-								left: '-=' + move_unit
-							}, ani_time, move_ease);
-						 }
-			 
-						 if (e.keyCode === 38) 
-						 {
-						 e.preventDefault();
-							map_wrap$.animate({
-								top: '+=' + move_unit
-							}, ani_time, move_ease);
-						 }
-			 
-						 if (e.keyCode === 40) 
-						 {
-						 e.preventDefault();
-							map_wrap$.animate({
-								top: '-=' + move_unit
-							}, ani_time, move_ease);
-						 }
-					})			
+					 if (e.keyCode === 37) //left 
+					 {
+						map_wrap$.animate({
+							left: '+=' + move_unit
+						}, ani_time, move_ease);
+					 }
+				 
+					 if (e.keyCode === 39) 
+					 {
+						map_wrap$.animate({ //right
+							left: '-=' + move_unit
+						}, ani_time, move_ease);
+					 }
+				 
+					 if (e.keyCode === 38) 
+					 {
+					 e.preventDefault(); // prevent scroll action
+						map_wrap$.animate({ //up
+							top: '+=' + move_unit
+						}, ani_time, move_ease);
+					 }
+				 
+					 if (e.keyCode === 40) 
+					 {
+					 e.preventDefault(); // prevent scroll action
+						map_wrap$.animate({ // down
+							top: '-=' + move_unit
+						}, ani_time, move_ease);
+					 }
+				})			
 			
+
+			var mapster_element$ = $('img.mapster_el');
 			
-// 			Select a continent menu
-// todo  - make single function to accept
-// resize value, top, left, game_name
-			$('select#quiz_select').change(function(){ // on menu change event
+			var map_adjust = { // coordinates for map positioning and zooming
+			
+				africa: {
+					resize: 1942,
+					top: -230,
+					left: -750,
+					},
+					
+				europe: {
+					resize: 3500,
+					top: -100,
+					left: -1550,
+				},
+				
+				south_america: {
+					resize: 2300,
+					top: -480,
+					left: -450,				
+				},
+				
+				southeast_asia: {
+					resize: 2400,
+					top: -300,
+					left: -1600,
+				}
+			};
+
+// 			Select a continent from dropdown menu
+
+			$('select#quiz_select').change(function(){ 
 				
 				$('#game_save_message').hide();
 				
-				if ($(this).val() == 'africa') {
-					
-					quiz.game_name = 'africa';
-					
-					world_map$.mapster('resize', 1942, 0, zoom_time);
-
-					map_wrap$.animate({top: -230, left: -750}, ani_time, zoom_ease);
-					
-					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/africa');// prepares 'start quiz' form with proper action				
-				}
+				var continent_choice = $(this).val();
 				
-				if ($(this).val() == 'europe') {
+				$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"}); // swap in map for quiz, with extra arrows and visuals
+
+				world_map$.mapster('resize', map_adjust[continent_choice].resize, 0, zoom_time);
+
+				map_wrap$.animate({top: map_adjust[continent_choice].top, left: map_adjust[continent_choice].left}, ani_time, zoom_ease);					
 				
-					quiz.game_name = 'europe';
+				start_quiz_form$.attr('action', 'quiz/prepare_quiz/' + continent_choice);// prepares 'start quiz' form with proper action				
 
-					world_map$.mapster('resize', 3500, 0, zoom_time);
-
-					map_wrap$.animate({top: -100, left: -1550}, ani_time, zoom_ease);
-					
-					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/europe');// prepares 'start quiz' form with proper action		
-				}
-				
-				if ($(this).val() == 'south_america') {
-				
-					quiz.game_name = 'south_america';
-
-					world_map$.mapster('resize', 2300, 0, zoom_time);
-
-					map_wrap$.animate({top: -480, left: -450}, ani_time, zoom_ease);
-					
-					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/south_america');// prepares 'start quiz' form with proper action		
-				}
-
-				if ($(this).val() == 'southeast_asia') {
-
-					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
-
-					world_map$.mapster('resize', 2400, 0, zoom_time);
-
-					map_wrap$.animate({top: -300, left: -1600}, ani_time, zoom_ease);
-					
-					$('#start_quiz_form').attr('action', 'quiz/prepare_quiz/southeast_asia');// prepares 'start quiz' form with proper action		
-				}
-
-				$('#start_quiz_form').show();
-				$('#start_quiz_form').animate({opacity: 100, height: 50},1000);
+				start_quiz_form$.show();
+				start_quiz_form$.animate({opacity: 100, height: 50},1000);
 
 			});
 			
 // 			Start Quiz actions-------------------------------
 			
-			var form$ = $('#start_quiz_form');
-			
-			form$.submit(function(){
+			start_quiz_form$.submit(function(){ // hit start button
 
-				$.post(form$.attr('action'), form$.serialize(), function(data){
+				$.post(start_quiz_form$.attr('action'), start_quiz_form$.serialize(), function(data){
 					quiz.quiz_data = data;
 					quiz.num_questions = data.length;
 					quiz.correct_answers = 0;
@@ -195,29 +197,29 @@
 			
 // 				Hiding and showing various buttons------------
 					
-					$('#quiz_select_form').animate({opacity: 0, height: 0},1000);
-					$('#quiz_select_form').hide();
+					quiz_select_form$.animate({opacity: 0, height: 0},1000);
+					quiz_select_form$.hide();
 
-					$('#start_quiz_form').animate({opacity: 0, height: 0},1000);
-					$('#start_quiz_form').hide();
+					start_quiz_form$.animate({opacity: 0, height: 0},1000);
+					start_quiz_form$.hide();
 			
-					$('#question_box').show();	
-					$('#question_box').animate({opacity: 100, height: 130},1000);
+					question_box$.show();	
+					question_box$.animate({opacity: 100, height: 130},1000);
 				
-					$('#flag_division').show();
-					$('#flag_division').animate({opacity: 100, height: 123},1000);
+					flag_division$.show();
+					flag_division$.animate({opacity: 100, height: 123},1000);
 				
-					$('#correct_questions').html("score: 0");
-					$('#score_stats').show();
-					$('#score_stats').animate({opacity: 100, height: 60},1000);
+					correct_questions$.html("score: 0");
+					score_stats$.show();
+					score_stats$.animate({opacity: 100, height: 60},1000);
 				
-					$('#stop_quiz_form').show();
-					$('#stop_quiz_form').animate({opacity: 100, height: 50},1000);
+					stop_quiz_form$.show();
+					stop_quiz_form$.animate({opacity: 100, height: 50},1000);
 
-					$('#start_over_quiz_form').show();
-					$('#start_over_quiz_form').animate({opacity: 100, height: 50},1000);
+					start_over_quiz_form$.show();
+					start_over_quiz_form$.animate({opacity: 100, height: 50},1000);
 				
-					$('img.mapster_el').attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
+					mapster_element$.attr({src: "<?= asset_url() ?>/img/world_map_for_quiz.gif"});
 					
 				}, 'json');
 
@@ -276,7 +278,7 @@
 					quiz.correct_answers++;
 					quiz.score = Math.floor((quiz.correct_answers * 100) / quiz.num_questions);
 					$('#response_message').html("Correct!");
-					$('#correct_questions').html("score: " + quiz.score + "<p id='percent'>%</p>");
+					correct_questions$.html("score: " + quiz.score + "<p id='percent'>%</p>");
 					quiz.quiz_data.shift();// remove top question from array
 					guess = 1; // reset guesses
 					setTimeout(function(){print_question()}, 2000); // wait a couple seconds before showing next question
@@ -304,7 +306,7 @@
 			}			
 
 
-			$('#stop_quiz_form').submit(function(){
+			stop_quiz_form$.submit(function(){
 
 				if(confirm('Are you sure you want to stop?'))
 				{
@@ -314,7 +316,7 @@
 			});
 
 
-			$('#start_over_quiz_form').submit(function(){
+			start_over_quiz_form$.submit(function(){
 			
 				if(confirm('Are you sure you want to start over?'))
 					form.submit();
@@ -328,18 +330,18 @@
 
 				$('#question').html("");//  clear out question field
 				$('#question_count').html("");//  clear out question_count field
-				$('#correct_questions').html("Final score: " + quiz.score + "<p id='percent'>%</p>");// print final score
+				correct_questions$.html("Final score: " + quiz.score + "<p id='percent'>%</p>");// print final score
 				
-				$('#question_box').animate({opacity: 0, height: 0},1000);
-				$('#question_box').hide();
+				question_box$.animate({opacity: 0, height: 0},1000);
+				question_box$.hide();
 
 				$('#flag_area').animate({opacity: 0, height: 0},1000);
-				$('#flag_division').hide();
+				flag_division$.hide();
 
-				$('#stop_quiz_form').animate({opacity: 0, height: 0}, 1000);
+				stop_quiz_form$.animate({opacity: 0, height: 0}, 1000);
 				$("input[value='Stop Quiz']").css("display", "none");
 				
-				$('#start_over_quiz_form').animate({opacity: 0, height: 0},1000);
+				start_over_quiz_form$.animate({opacity: 0, height: 0},1000);
 				$("input[value='Start Over']").css("display", "none");
 				
 				world_map$.mapster('resize', 494, 0, zoom_time);
