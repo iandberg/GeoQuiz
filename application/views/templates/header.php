@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>GeoQuiz</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!-- 	<script src="<?= asset_url() ?>js/jquery-1.9.1.min.js"></script> -->
+<!-- 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+	<script src="<?= asset_url() ?>js/jquery-1.9.1.min.js"></script>
 	<script src="<?= asset_url() ?>js/jquery.imagemapster.min.js"></script>
 	<script src="<?= asset_url() ?>js/jquery.easing.1.3.js"></script>
 
@@ -11,7 +11,7 @@
 	<link rel="stylesheet" media="screen" href="<?= asset_url() ?>css/geoquiz_style.css" /> 
 
 <?php
-	if(isset($quiz) && $quiz) require('script.php');
+	if(isset($quiz) && $quiz) require('quiz_script.php');
 	if(isset($study_guide) && $study_guide) require('study_guide_script.php');
 ?>
 
